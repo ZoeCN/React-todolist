@@ -1,10 +1,13 @@
 'use strict';
 let React = require('react');
 import '../../css/todoItem.scss';
+/**
+ * Jsdoc
+ * @param {list} value An todo list that you want to delete
+ * @return {Elements}
+ */
+
 class TodoList extends React.Component {
-  /**
-   * init-todolist
-   */
   constructor() {
     super();
     this.state = {
@@ -16,10 +19,6 @@ class TodoList extends React.Component {
       ],
     };
   }
-  /**
-   * render TodoList
-   * @return {Elements}
-   */
   render() {
     let todos = this.state.todos;
     let todoLists = todos.map((item, index) => {
@@ -27,7 +26,7 @@ class TodoList extends React.Component {
         <li className="todo-item" key={index}>
           <span className="item-name">{item}</span>
           <span className="item-delete"
-            onClick={()=>this.deleteList(item)} > x </span>
+            onClick={()=>this.deleteList(item)}> x </span>
         </li>
       );
     });
@@ -38,10 +37,6 @@ class TodoList extends React.Component {
       </div>
     );
   }
-  /**
-   *  delete a todo list
-   *  @param {list} value An todo list that you want to delete
-   */
   deleteList(value) {
     let updatedTodos = this.state.todos.filter((item, index) => {
       return item !== value;
