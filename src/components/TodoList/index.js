@@ -1,10 +1,6 @@
 'use strict';
 let React = require('react');
 import '../../css/todoItem.scss';
-/**
- *  Todolist
- *  return todo-list
- */
 class TodoList extends React.Component {
   /**
    * init-todolist
@@ -30,7 +26,8 @@ class TodoList extends React.Component {
       return (
         <li className="todo-item" key={index}>
           <span className="item-name">{item}</span>
-          <span className="item-delete" onClick={()=>this.deleteList(item)} > x </span>
+          <span className="item-delete"
+            onClick={()=>this.deleteList(item)} > x </span>
         </li>
       );
     });
